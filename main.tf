@@ -12,7 +12,7 @@ resource "kubernetes_namespace" "this" {
 }
 
 locals {
-  argocd_enabled = length(var.argocd) > 0 ? 1 : 1
+  argocd_enabled = length(var.argocd) > 0 ? 1 : 0
   namespace      = coalescelist(kubernetes_namespace.this, [{ "metadata" = [{ "name" = var.namespace }] }])[0].metadata[0].name
 }
 
