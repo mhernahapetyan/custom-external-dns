@@ -17,7 +17,7 @@ locals {
 }
 
 resource "helm_release" "this" {
-  count = 1 - local.argocd_enabled
+  # count = 1 - local.argocd_enabled
   depends_on = [
     var.module_depends_on
   ]
