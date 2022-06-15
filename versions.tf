@@ -7,6 +7,5 @@ terraform {
     kubernetes = ">= 2.6"
     random     = ">= 3.1.0"
     local      = ">= 2.1.0"
-    utils      = ">= 0.14.0"
   }
 }
