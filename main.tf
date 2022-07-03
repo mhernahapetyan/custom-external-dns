@@ -164,12 +164,12 @@ locals {
     "readinessProbe.successThreshold" = 1,
     "extraVolumes" = [],
     "extraVolumeMounts" = [],
-    "annotationFilter" = "",
-    "labelFilter" = "",
-    "dryRun" = "",
+    "annotationFilter" = " ",
+    "labelFilter" = " ",
+    "dryRun" = " ",
     "logLevel" = "info",
     "logFormat" = "text",
-    "schedulerName" = "",
+    "schedulerName" = " ",
     "replicaCount" = 1
     },
     {
