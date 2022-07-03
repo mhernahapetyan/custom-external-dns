@@ -162,15 +162,15 @@ locals {
     "readinessProbe.timeoutSeconds" = 5,
     "readinessProbe.failureThreshold" = 6,
     "readinessProbe.successThreshold" = 1,
-    # "extraVolumes" = [],
-    # "extraVolumeMounts" = [],
+    "extraVolumes" = [],
+    "extraVolumeMounts" = [],
     # "annotationFilter" = " ",
     # "labelFilter" = " ",
     # "dryRun" = " ",
-    # "logLevel" = "info",
-    # "logFormat" = "text",
+    "logLevel" = "info",
+    "logFormat" = "text",
     # "schedulerName" = " ",
-    # "replicaCount" = 1
+    "replicaCount" = 1
     },
     {
       for i, zone in concat(var.hostedzones, data.aws_route53_zone.main.*.name) :
