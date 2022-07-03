@@ -149,7 +149,7 @@ locals {
     "resources.requests.cpu"                                    = "100m",
     "resources.requests.memory"                                 = "300Mi",
     "aws.region"                                                = data.aws_region.current.name
-    "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn" = module.iam_assumable_role_admin.this_iam_role_arn
+    "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn" = module.iam_assumable_role_admin.this_iam_role_arn,
     "livenessProbe.enabled" = true,
     "livenessProbe.initialDelaySeconds" = 10,
     "livenessProbe.periodSeconds" = 10,
@@ -171,11 +171,13 @@ locals {
     "logFormat" = "text",
     "schedulerName" = "",
     "replicaCount" = 1
+    },
     {
       for i, zone in concat(var.hostedzones, data.aws_route53_zone.main.*.name) :
       "domainFilters[${i}]" => zone
     }
   )
+  
   application = {
     "apiVersion" = "argoproj.io/v1alpha1"
     "kind"       = "Application"

@@ -3,8 +3,8 @@ terraform {
 
   required_providers {
     aws        = ">= 3.0"
-    helm       = ">= 2.5.0"
-    kubernetes = ">= 2.6"
+    helm       = ">= 1.0"
+    kubernetes = ">= 1.11"
     random     = ">= 3.1.0"
     local      = ">= 2.1.0"
   }
